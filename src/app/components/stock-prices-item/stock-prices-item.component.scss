@@ -1,0 +1,44 @@
+$default-bg: #2fcc71;
+$negative-growth-bg: #e74b3c;
+$unsubscribed-bg: #ecf0f1;
+
+:host {
+    display: grid;
+    padding: 24px 16px;
+    background-color: $default-bg;
+    color: #f2f2f2;
+    border-radius: 8px;
+    gap: 12px;
+    text-align: center;
+    transition: 0.4s;
+}
+
+:host(.stockPricesItem--negativeGrowth) {
+    background-color: $negative-growth-bg;
+}
+
+:host(.stockPricesItem--unsubscribed) {
+    background-color: $unsubscribed-bg;
+    color: #aaa;
+}
+
+.stockPricesItem {
+    &__name {
+        font-size: 1.5rem;
+    }
+
+    &__price {
+        font-size: 1.2rem;
+    }
+
+    &__tradeLabel {
+        font-weight: 600;
+    }
+}
+
+
+.mobileHidden {
+    @media screen and (max-width: 600px) {
+        display: none;
+    }
+}

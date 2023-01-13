@@ -1,0 +1,32 @@
+<div class="stockPricesItem__name">{{ name }}</div>
+<div class="stockPricesItem__price">
+    {{ stocksData?.price | price }}
+</div>
+<div class="stockPricesItem__changes">
+    <div class="stockPricesItem__absolute">
+        {{ stocksData?.change | normalize }}
+    </div>
+    <div class="stockPricesItem__percentage">
+        ({{ stocksData?.changepercent | percent }})
+    </div>
+</div>
+<div class="stockPricesItem__trade mobileHidden">
+    <div class="stockPricesItem__tradeLabel">Day high</div>
+    <div class="stockPricesItem__tradePrice">{{ stocksData?.dayhigh | normalize }}</div>
+</div>
+<div class="stockPricesItem__trade mobileHidden">
+    <div class="stockPricesItem__tradeLabel">Day low</div>
+    <div class="stockPricesItem__tradePrice">{{ stocksData?.daylow | normalize }}</div>
+</div>
+<div class="stockPricesItem__trade">
+    <div class="stockPricesItem__tradeLabel">Last trade</div>
+    <div class="stockPricesItem__tradeTime">{{ (stocksData?.time | date : 'hh:mm:ss') ?? '--:--:--'}}</div>
+</div>
+<div class="stockPricesItem__volume mobileHidden">
+    VOL: {{ stocksData?.dayvolume ?? '--'}}
+</div>
+<div class="stockPricesItem__follow">
+    <app-toggle-switch
+        [selected]="!unsubscribed"
+        (onSwitched)="toggle($event)"></app-toggle-switch>
+</div>

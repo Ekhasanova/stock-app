@@ -1,0 +1,6 @@
+<label class="toggleSwitch">
+  <input class="toggleSwitch__input"type="checkbox" [checked]="selected" (change)="switch($event)">
+  <div class="toggleSwitch__slider">
+    <div class="toggleSwitch__text" [class.right-sided]="selected">{{ selected ? 'ON' : 'OFF'}}</div>
+  </div>
+</label>

@@ -1,0 +1,5 @@
+<div class="stockPrices">
+    <ng-container *ngFor="let stockName of stockNames">
+        <app-stock-prices-item [name]="stockName" [data]="(stocksData$ | async)[stockName]"></app-stock-prices-item>
+    </ng-container>
+</div>
